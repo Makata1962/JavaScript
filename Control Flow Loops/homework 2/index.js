@@ -1,7 +1,26 @@
 let n = 1000;
+let count = 0;
 
-let i = 2;
+// while (result / 2 > 50) {
+//   count++;
+//   var result = n / 2;
+//   result++;
+// }
 
-while(n % i > 50) {
-    console.log(`iteration`);
+function divideByTwo(n) {
+  return (result = n / 2);
 }
+
+function countIteration(n) {
+  divideByTwo(n);
+  do {
+    divideByTwo(result);
+    count++;
+    result++;
+  } while (result > 50);
+
+  return count;
+}
+
+countIteration(1000);
+console.log(count);
