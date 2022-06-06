@@ -1,5 +1,6 @@
 function f(arr) {
   for (let i = 0; i < arr.length; i++) {
+    return arr[i];
     console.log(arr[i]);
   }
 }
