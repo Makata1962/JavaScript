@@ -10,9 +10,11 @@ try {
     if (value > limit) {
       throw new Error("Value is more than limit");
     }
+    console.log(value)
+    return value;
   }
 } catch (err) {
   console.log(err.stack);
 }
 
-checkLimit(110);
+checkLimit(80);
