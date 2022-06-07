@@ -1,15 +1,18 @@
 function f(arr) {
   try {
-    if (arr.isArray) {
-      console.log(!arr.isArray);
+    if (!Array.isArray(arr)) {
       throw new TypeError("Passed parameter has to be array");
     }
 
-    if (arr.length < 0) {
+    if (!arr.length) {
       throw new Error("Passed array can not be empty");
     }
-    if (typeof arr.every !== "number") {
-      console.log(arr.every);
+
+    let allPassed = arr.every(function (i) {
+      return typeof i === "number";
+    });
+
+    if (!allPassed) {
       throw new Error("Passed array can only contain numbers");
     }
     for (let i = 0; i < arr.length; i++) {
@@ -18,6 +21,7 @@ function f(arr) {
   } catch (err) {
     console.log(err.message);
   }
+  return arr;
 }
-const arr = [1, 2, 3];
+const arr = [1, 2, 3, 5];
 f(arr);
