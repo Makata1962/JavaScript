@@ -14,12 +14,13 @@ try {
       }
       i++;
     }
+    return num;
   }
 } catch (err) {
   console.log(err.message);
 }
-getDivisors("st");
-getDivisors(0);
+// getDivisors("st");
+// getDivisors(0);
 getDivisors(16);
-getDivisors(-1);
+// getDivisors(-1);
 console.log(arr);
