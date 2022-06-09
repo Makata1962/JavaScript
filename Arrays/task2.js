@@ -1,4 +1,4 @@
-let arr = [];
+let arr = [1, 2, 3];
 function reverse(arr) {
   try {
     // console.log(!arr.length);
@@ -15,6 +15,7 @@ function reverse(arr) {
   } catch (err) {
     console.log(err.message);
   }
+  return arr;
 }
 
 reverse(arr);
