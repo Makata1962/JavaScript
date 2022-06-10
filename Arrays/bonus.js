@@ -26,3 +26,11 @@ var arr = [1, 2, 3];
 
 rotate(arr, 1, "left");
 rotate(arr, 1, "right");
+
+try {
+  rotate(arr, 1, "left");
+rotate(arr, 1, "right");
+
+} catch(err) {
+  console.log(err.message);
+}
