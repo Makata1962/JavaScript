@@ -1,28 +1,31 @@
-const isUpperCase = (char) =>
-  char.charCodeAt(0) >= 65 && char.charCodeAt(0) <= 90;
-const isLowerCase = (char) =>
-  char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122;
 
-const reverseCase = (sentence) => {
-  if (typeof sentence !== "string") {
-    throw new TypeError("Parameter should be a string");
-  }
-  let newStr = "";
-  const margin = 32;
-  for (let i = 0; i < sentence.length; i++) {
-    const curr = sentence[i];
-    if (isLowerCase(curr)) {
-      newStr += String.fromCharCode(curr.charCodeAt(0) - margin);
-    } else if (isUpperCase(curr)) {
-      newStr += String.fromCharCode(curr.charCodeAt(0) + margin);
-    } else {
-      newStr += curr;
+function reverseCase(sentence) {
+    if (typeof sentence !== 'string') {
+        throw new TypeError('Parameter should be a string')
     }
-  }
-  console.log(newStr);
-  return newStr;
-};
+    if(sentence === "") {
+        console.log(`""`)
+        return sentence
+    }
+    var arr = [];
+    for (let i = 0; i < sentence.length; i++) {
+        if (sentence.charAt(i) === sentence.charAt(i).toUpperCase()) {
+            var changedCharacter = sentence.charAt(i).toLowerCase();
+            arr.push(changedCharacter);
+        } else {
+            changedCharacter = sentence.charAt(i).toUpperCase();
+            arr.push(changedCharacter)
+        }
+    }
+    var newArr = arr.join('')
+    console.log(newArr)
+    return arr;
+}
+
+
+
 
 reverseCase("Hello theRe");
 reverseCase("BIG LETTERS");
-reverseCase(12);
+reverseCase("")
+// reverseCase(1);
