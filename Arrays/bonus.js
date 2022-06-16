@@ -22,7 +22,7 @@ function rotate(arr, num, str) {
   }
 }
 
-var arr = [1, 2, 3];
+var arr = [1, a, 3];
 
 rotate(arr, 1, "left");
 rotate(arr, 1, "right");
