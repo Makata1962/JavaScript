@@ -10,24 +10,6 @@ const data = {
   },
 };
 
-Object.prototype.mergeDeepRight = function () {
-  age = this.age;
-  contact = this.contact;
-};
-
-data.mergeDeepRight({
-  age: 40,
-  contact: {
-    email: "baa@example.com",
-    favorite: true,
-    meta: {
-      tags: ["vip"],
-    },
-  },
-});
-
-console.log(data);
-
 // data will be
 // {
 // 	name: 'fred',
@@ -41,3 +23,21 @@ console.log(data);
 //         }
 // 	}
 // }
+
+Object.prototype.mergeDeepRight = function (...args) {
+  const names = Object.getOwnPropertyNames(data);
+  console.log(names);
+};
+
+const newData = data.mergeDeepRight({
+  age: 40,
+  contact: {
+    email: "baa@example.com",
+    favorite: true,
+    meta: {
+      tags: ["vip"],
+    },
+  },
+});
+
+console.log(newData);
